@@ -21,5 +21,5 @@ function totalFuel(mass) {
     return fuel + totalFuel(fuel)
 }
 
-var answer_2 = data.map(totalFuel).reduce((a, b) => a + b, 0)
-console.log(answer_2)
+var answer_2 = data.map(totalFuel).reduce((a, b) => a + b, 0);
+console.log(answer_2);
