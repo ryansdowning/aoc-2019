@@ -13,14 +13,17 @@ function part1(data, mem1=12, mem2=2) {
     data[2] = mem2;
     for (let i = 0; i < data.length; i += 4) {
         let opcode = data[i];
-        if (opcode == 1) {
-            data[data[i + 3]] = data[data[i + 1]] + data[data[i + 2]];
-        } else if (opcode == 2) {
-            data[data[i + 3]] = data[data[i + 1]] * data[data[i + 2]];
-        } else if (opcode == 99) {
-            break;
-        } else {
-            throw new Error("Unexpected opcode encountered: " + String(opcode));
+        switch (opcode) {
+            case 1:
+                data[data[i + 3]] = data[data[i + 1]] + data[data[i + 2]];
+                break;
+            case 2:
+                data[data[i + 3]] = data[data[i + 1]] * data[data[i + 2]];
+                break;
+            case 99:
+                return data[0]
+            default:
+                throw new Error("Unexpected opcode encountered: " + String(opcode));
         }
     }
     return data[0]
