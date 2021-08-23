@@ -4,15 +4,6 @@ let path = require("path");
 const data = String(fs.readFileSync(path.join(__dirname, "..", "data", "day03.txt"))).trimEnd().split("\n").map((path) => path.split(','));
 
 
-class Coord {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-
-}
-
-
 class Instruction {
     constructor(instruction) {
         this.direction = instruction.charAt(0);
