@@ -44,6 +44,6 @@ var path1 = new Set(paths[0].path.map(JSON.stringify));
 var path2 = new Set(paths[1].path.map(JSON.stringify));
 var intersections = [...path2].filter(coord => path1.has(coord)).map(JSON.parse);
 var intersectionDistances = intersections.map(coord => Math.abs(coord.x) + Math.abs(coord.y));
-intersectionDistances.sort((a, b) => a - b);
+intersectionDistances.sort();
 var answer_1 = intersectionDistances[0]
 console.log(answer_1);
