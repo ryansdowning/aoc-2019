@@ -4,7 +4,7 @@ let path = require("path");
 function load(file, converter=Number) {
     return String(fs.readFileSync(path.join(__dirname, "../data/", file)))
         .trimEnd()
-        .split(require("os").EOL)
+        .split("\n")
         .map(converter)
 }
 
